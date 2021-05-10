@@ -21,6 +21,23 @@ namespace Bakery.Tests
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
 
+    [TestMethod]
+    public void GetPrice_ReturnPriceOfBread_Int()
+    {
+      Bread newBread = new Bread(1);
+      int result = newBread.GetPrice();
+      Assert.AreEqual(5, newBread.GetPrice());
+    }
+
+    [TestMethod]
+    public void GetPrice_ReturnPriceOfPastry_Int()
+    {
+      Pastry newPastry = new Pastry(1);
+      int result = newPastry.GetPrice();
+      Assert.AreEqual(2, newPastry.GetPrice());
+    }
+
+
   }
 }
 
@@ -31,3 +48,7 @@ namespace Bakery.Tests
 //   // any necessary logic to prep for test; instantiating new classes, etc.
 //   Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
 // }
+
+// Arrange
+// Act
+// Assert
