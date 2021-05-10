@@ -1,4 +1,5 @@
 using System;
+//using System.Collections.Generic; if I want to list out the order
 using Bakery.Models;
 
 public class Program
@@ -20,10 +21,16 @@ public class Program
     if (breadInput)
     {
       Console.WriteLine("How many loaves of bread would you like?");
+      string userQuantityString = Console.ReadLine();
+      int userQuantityInt = Convert.ToInt32(userQuantityString);
+      Bread breadOrder = new Bread(userQuantityInt);
     }
     else if (pastryInput)
     {
       Console.WriteLine("How many pastries would you like?");
+      string userQuantityString = Console.ReadLine();
+      int userQuantityInt = Convert.ToInt32(userQuantityString);
+      Pastry pastryOrder = new Pastry(userQuantityInt);
     }
 
   }
