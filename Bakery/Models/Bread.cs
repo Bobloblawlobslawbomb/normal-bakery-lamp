@@ -32,7 +32,15 @@ namespace Bakery.Models
 
     public int GetPrice()
     {
-      return _price;
+      if (Quantity == 2)
+      {
+        _price = 3;
+        return _price;
+      }
+      else
+      {
+        return _price;
+      }
     }
 
   }
@@ -40,18 +48,22 @@ namespace Bakery.Models
 
 /*
 
+Do not need 'Bread.' or 'Pastry.' before Quantity in If statements
+And updating the Quantity in these does not work as expected
+
 public int GetPrice()
 {
-  if (Quantity == 1)
+  if (Bread.Quantity == 1)
   {
     return _price;
   }
-  else if (Quantity == 2)
+  else if (Bread.Quantity == 2)
   {
     _price = _price * Quantity;
+    Quantity = 3;
     return _price;
   }
-  else if (Quantity % 2 == 0)
+  else if (Bread.Quantity % 2 == 0)
   {
     _price = _price * Quantity;
     Quantity = Quantity + (Quantity/2);
@@ -64,7 +76,6 @@ public int GetPrice()
     return _price;
   }
 }
-
 public int GetPrice()
 {
   if (Pastry.Quantity == 1)
@@ -97,5 +108,4 @@ public int GetPrice()
     return _price;
   }
 }
-
 */
