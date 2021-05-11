@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Bakery.Models
@@ -15,7 +16,7 @@ namespace Bakery.Models
 
     public int GetPrice()
     {
-      return _price;
+      return _price * Quantity;
     }
   }
   public class Pastry
@@ -41,17 +42,16 @@ namespace Bakery.Models
 
 public int GetPrice()
 {
-  if (Bread.Quantity == 1)
+  if (Quantity == 1)
   {
     return _price;
   }
-  else if (Bread.Quantity == 2)
+  else if (Quantity == 2)
   {
     _price = _price * Quantity;
-    Quantity = 3;
     return _price;
   }
-  else if (Bread.Quantity % 2 == 0)
+  else if (Quantity % 2 == 0)
   {
     _price = _price * Quantity;
     Quantity = Quantity + (Quantity/2);
