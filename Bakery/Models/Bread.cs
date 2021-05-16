@@ -7,43 +7,53 @@ namespace Bakery.Models
   {
     private int _price;
     public int Quantity { get; set; }
+    public int TotalPrice { get; set; }//think about if we need both get and set
 
     public Bread(int quantity)
     {
       _price = 5;
       Quantity = quantity;
+      TotalPrice = 5;
     }
 
-    public int GetPrice()
+    public int GetTotalPrice()
     {
-      return _price * Quantity;
-    }
-  }
-  public class Pastry
-  {
-    private int _price;
-    public int Quantity { get; set; }
-
-    public Pastry(int quantity)
-    {
-      _price = 2;
-      Quantity = quantity;
+      TotalPrice = _price * TotalPrice;
+      return TotalPrice;
     }
 
-    public int GetPrice()
+    public int BreadDeal()
     {
-      if (Quantity == 2)
-      {
-        _price = 3;
-        return _price;
-      }
-      else
-      {
-        return _price;
-      }
+      TotalPrice -= (Quantity/2);
     }
+
 
   }
+  // public class Pastry
+  // {
+  //   private int _price;
+  //   public int Quantity { get; set; }
+
+  //   public Pastry(int quantity)
+  //   {
+  //     _price = 2;
+  //     Quantity = quantity;
+  //   }
+
+  //   public int GetPrice()
+  //   {
+  //     if (Quantity == 2)
+  //     {
+  //       _price = 3;
+  //       return _price;
+  //     }
+  //     else
+  //     {
+  //       return _price;
+  //     }
+  //   }
+
+  // }
 }
 
 /*
