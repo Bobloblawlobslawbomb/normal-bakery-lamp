@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Bakery.Models;
-using System.Collections.Generic;
 
 namespace Bakery.Tests
 {
@@ -16,54 +15,35 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void PastryConstructor_CreatesInstanceOfPastry_Pastry()
-    {
-      Pastry newPastry = new Pastry(1);
-      Assert.AreEqual(typeof(Pastry), newPastry.GetType());
-    }
-
-    [TestMethod]
     public void GetPrice_ReturnPriceOfBread_Int()
     {
       Bread newBread = new Bread(1);
       int result = newBread.GetPrice();
-      Assert.AreEqual(5, newBread.GetPrice());
+      Assert.AreEqual(5, result);
     }
 
     [TestMethod]
-    public void GetPrice_ReturnPriceOfPastry_Int()
+    public void GetPrice_ReturnPriceOf4Bread_Int()
     {
-      Pastry newPastry = new Pastry(1);
-      int result = newPastry.GetPrice();
-      Assert.AreEqual(2, newPastry.GetPrice());
+      Bread newBread = new Bread(4);
+      int result = newBread.GetPrice();
+      Assert.AreEqual(20, result);
     }
 
     [TestMethod]
-    public void GetPrice_MultiplyBreadPricebyBreadQuantity_Int()
+    public void BreadDeal_ReturnNewBreadDealQuantity_Int()
     {
       Bread newBread = new Bread(2);
-      int result = newBread.GetPrice();
-      Assert.AreEqual(10, newBread.GetPrice());
+      int result = newBread.BreadDeal();
+      Assert.AreEqual(3, result);
     }
 
     [TestMethod]
-    public void GetPrice_Pastry2For3DollarDeal_Int()
+    public void BreadDeal_ReturnNewBreadDealForQuantity4_Int()
     {
-      Pastry newPastry = new Pastry(2);
-      int result = newPastry.GetPrice();
-      Assert.AreEqual(3, newPastry.GetPrice());
+      Bread newBread = new Bread(4);
+      int result = newBread.BreadDeal();
+      Assert.AreEqual(6, result);
     }
   }
 }
-
-// Test boilerplate
-// [TestMethod]
-// public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
-// {
-//   // any necessary logic to prep for test; instantiating new classes, etc.
-//   Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
-// }
-
-// Arrange
-// Act
-// Assert
