@@ -45,10 +45,9 @@ public class Program
     }
     else
     {
+      Console.WriteLine("------------------------");
       Console.WriteLine("Oops! That is an invalid choice. Please exit the store and Return when you want some tasty baked goods.");
-      Console.WriteLine("------------------");
-      Console.WriteLine("------------------");
-      Console.WriteLine("------------------");
+      Console.WriteLine("------------------------");
       Main();
     }
   }
