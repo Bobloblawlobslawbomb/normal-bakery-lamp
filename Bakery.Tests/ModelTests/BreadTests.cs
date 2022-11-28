@@ -27,23 +27,7 @@ namespace Bakery.Tests
     {
       Bread newBread = new Bread(4);
       int result = newBread.GetPrice();
-      Assert.AreEqual(20, result);
-    }
-
-    [TestMethod]
-    public void BreadDeal_ReturnNewBreadDealQuantity_Int()
-    {
-      Bread newBread = new Bread(2);
-      int result = newBread.BreadDeal();
-      Assert.AreEqual(3, result);
-    }
-
-    [TestMethod]
-    public void BreadDeal_ReturnNewBreadDealForQuantity4_Int()
-    {
-      Bread newBread = new Bread(4);
-      int result = newBread.BreadDeal();
-      Assert.AreEqual(6, result);
+      Assert.AreEqual(15, result);
     }
   }
 }
