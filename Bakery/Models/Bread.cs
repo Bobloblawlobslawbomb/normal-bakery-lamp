@@ -15,16 +15,15 @@ namespace Bakery.Models
 
     public int GetPrice()
     {
-      return TotalPrice = Quantity * _price;
-    }
-
-    public int BreadDeal()
-    {
-      if (Quantity > 1)
+      if (Quantity >= 3)
       {
-        return Quantity += (Quantity / 2);
+        TotalPrice = (Quantity * _price) - ((Quantity / 3) * _price);
       }
-      return Quantity;
+      else
+      {
+        TotalPrice = Quantity * _price;
+      }
+      return TotalPrice;
     }
   }
 }
