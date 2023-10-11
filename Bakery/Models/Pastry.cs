@@ -8,11 +8,13 @@ using System.Collections.Generic;
     {
       private int _price;
       public int Quantity { get; set; }
+      public int TotalPrice { get; set; }
 
       public Pastry(int quantity)
       {
         _price = 2;
         Quantity = quantity;
+        TotalPrice = 2;
       }
 
       // public int GetPrice()
